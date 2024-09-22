@@ -1,0 +1,13 @@
+name: service-container example
+on: push
+
+jobs:
+  service-container-example:
+      runs-on: "ubuntu-latest"
+      services:
+        redis-container:
+          image: redis
+          ports:
+            - 6379:6379
+
+    
