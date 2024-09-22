@@ -1,18 +1,33 @@
-name: Multi-events
+name: manual-event
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+  workflow_dispatch:
+    inputs:
+      name:
+          description: "Name of the person to greet"
+          type: string
+          required: true
+      greet:
+          description: "Type of greet"
+          type: string
+          required: true
+      base64FileContent:
+          description: "Base64 File content"
+          type: string
+          required: true
 jobs:
-  multi-event:
+  greet:
     runs-on: "ubuntu-latest"
     steps:
-      - name: Print Hello World
+      - name: Decode file content
         run: |
-          echo "Hello World triggered multi event $GITHUB_REF"
-          echo "$GITHUB_ACTOR"
-          echo "$GITHUB_ACTION"
+          echo "${{inputs.data}}" | base64 --decode > ./decode.txt
+      - name: Greet to person
+        run: |
+          echo "${{inputs.name}} : ${{inputs.greet}}"
+      - name: Print decoded file in console
+        run: |
+          echo "Contents of the file"
+          cat ./decode.txt
+
+
+          
