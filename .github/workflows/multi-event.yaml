@@ -1,0 +1,18 @@
+name: Multi-events
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  multi-event:
+    runs_on: "ubuntu-latest"
+    steps:
+      - name: Print Hello World
+        run: |
+          echo "Hello World triggered multi event $GITHUB_REF"
+          echo "$GITHUB_ACTOR"
+          echo "GITHUB_ACTION"
