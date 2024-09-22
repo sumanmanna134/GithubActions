@@ -35,7 +35,7 @@ jobs:
       - name: Format and echo string
         run: echo "${{ format('hello {0} {1} {2}', 'suman', 'alex', 'ajay') }}"
       - name: join the issue label
-        if: github_event_name == 'push'
+        if: github.event_name == 'push'
         run: |
               echo "Issue label: ${{join(github.event.issue.labels.*.name, ', ')}}"
       - name: convert job context to json
