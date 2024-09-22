@@ -20,4 +20,25 @@ jobs:
     steps:
       - name: GoodBYe
         run: echo "Goodbye"
-  
+  expression:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Check if string contains substring
+        if: contains('hello_world', 'llo')
+        run: echo "The string contains the substring"
+      - name: check if string starts with
+        if: startsWith("hello_World", 'h')
+        run: echo "the string starts with h"
+      - name: check if string endswith
+        if: endsWith("hello_world", 'ld')
+        run: echo "string ends with ld"
+      - name: Format and echo string
+        run: echo "${{ format('hello {0} {1} {2}', 'suman', 'alex', 'ajay') }}"
+      - name: join the issue label
+        if: github_event_name == 'push'
+        run: |
+              echo "Issue label: ${{join(github.event.issue.labels.*.name, ', ')}}"
+      - name: convert job context to json
+        run: |
+             echo "${{toJSON(github.job)}}"
+              
