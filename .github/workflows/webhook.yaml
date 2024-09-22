@@ -1,0 +1,17 @@
+name: webhook Event
+on:
+  repository_dispatch:
+    types:
+      - webhook
+
+jobs:
+  webhook:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout to repo
+        uses: actions/checkout@v3
+
+      - name: get event
+        id: event
+        run: |
+          echo "${{GITHUB_EVENT_NAME}}"
