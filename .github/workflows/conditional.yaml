@@ -27,10 +27,10 @@ jobs:
         if: contains('hello_world', 'llo')
         run: echo "The string contains the substring"
       - name: check if string starts with
-        if: startsWith("hello_World", 'h')
+        if: startsWith('hello_world', 'h')
         run: echo "the string starts with h"
       - name: check if string endswith
-        if: endsWith("hello_world", 'ld')
+        if: endsWith('hello_world', 'ld')
         run: echo "string ends with ld"
       - name: Format and echo string
         run: echo "${{ format('hello {0} {1} {2}', 'suman', 'alex', 'ajay') }}"
@@ -41,4 +41,4 @@ jobs:
       - name: convert job context to json
         run: |
              echo "${{toJSON(github.job)}}"
-              
+
