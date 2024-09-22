@@ -1,0 +1,22 @@
+name: Conditional event
+on:
+  push: 
+    branches:
+      - main
+
+
+jobs:
+  greet:
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: hello-world
+        run: |
+          echo "Hello World" | base64
+  conditional:
+    if: github.event == "push" && github.repository == "GithubActions"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: GoodBYe
+        run: echo "Goodbye"
+  
