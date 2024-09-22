@@ -13,6 +13,7 @@ jobs:
       - name: hello-world
         run: |
           echo "Hello World" | base64
+          echo "${{github.event}}"
   conditional:
     if: github.event == 'push' && github.repository == 'GithubActions'
     runs-on: "ubuntu-latest"
