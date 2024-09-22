@@ -9,7 +9,7 @@ on:
 
 jobs:
   multi-event:
-    runs_on: "ubuntu-latest"
+    runs-on: "ubuntu-latest"
     steps:
       - name: Print Hello World
         run: |
