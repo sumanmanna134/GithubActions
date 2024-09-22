@@ -15,4 +15,4 @@ jobs:
         run: |
           echo "Hello World triggered multi event $GITHUB_REF"
           echo "$GITHUB_ACTOR"
-          echo "GITHUB_ACTION"
+          echo "$GITHUB_ACTION"
