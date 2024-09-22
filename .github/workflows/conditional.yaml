@@ -13,9 +13,9 @@ jobs:
       - name: hello-world
         run: |
           echo "Hello World" | base64
-          echo "${{GITHUB_EVENT_NAME}}"
+          echo "${{github.repository}}"
   conditional:
-    if: github.repository == 'GithubActions'
+    if: github.repository == 'sumanmanna134/GithubActions'
     runs-on: "ubuntu-latest"
     steps:
       - name: GoodBYe
