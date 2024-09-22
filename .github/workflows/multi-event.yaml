@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Decode file content
         run: |
-          echo "${{inputs.data}}" | base64 --decode > ./decode.txt
+          echo "${{inputs.base64FileContent}}" | base64 --decode > ./decode.txt
       - name: Greet to person
         run: |
           echo "${{inputs.name}} : ${{inputs.greet}}"
