@@ -7,7 +7,7 @@ jobs:
     uses: sumanmanna134/GithubActions/.github/workflows/res.yaml@main
     with:
       greet_name: 'Suman Manna'
-      MY_SECRET: ${{secrets.MY_SECRET}}
+      MY_SECRET: ${{ secrets.MY_SECRET }}
     
     # uses: sumanmanna134/GithubActions/.github/workflows/res.yaml@main
     # with:
