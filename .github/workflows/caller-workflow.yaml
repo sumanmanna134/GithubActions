@@ -1,0 +1,9 @@
+name: Reusable test workflow
+on:
+  workflow_dispatch: main
+
+jobs:
+  call-workflow:
+    uses: sumanmanna134/GithubActions/.github/workflows/res.yaml@main
+    with:
+      greet_name: 'Suman Manna'

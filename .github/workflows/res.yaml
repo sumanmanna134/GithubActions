@@ -1,0 +1,32 @@
+name: Reusable workflow
+on:
+  workflow_call:
+    inputs:
+      greet_name:
+        description: "To greet the name"
+        required: true
+        type: string
+        
+    secrets:
+      GITHUB_TOKEN:
+        description: "env secrets of this workflow"
+        required: true
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - name: Print Console
+        run: echo ${{github.actor}}
+
+
+        
+
+    
+      
+    
