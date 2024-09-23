@@ -1,6 +1,6 @@
 name: Reusable test workflow
 on:
-  workflow_dispatch: main
+  workflow_dispatch:
 
 jobs:
   call-workflow:
