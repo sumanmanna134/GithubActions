@@ -9,7 +9,7 @@ on:
         
     secrets:
       MY_SECRET:
-        required: false
+        required: true
 jobs:
   run-tests:
     runs-on: ubuntu-latest
@@ -22,9 +22,10 @@ jobs:
           node-version: '14'
       - name: Echo secret (example usage)
         run: echo "The secret is ${{ secrets.MY_SECRET }}" 
-      - name: Run tests
-        run: ${{ inputs.greet_name }}
-      - name: Print Console
+      - name: Greet name
+        run: |
+          echo "${{ inputs.greet_name }}"
+      - name: Github Actor
         run: echo ${{github.actor}}
 
 
