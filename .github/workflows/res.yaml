@@ -21,6 +21,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '14'
+      - name: Echo secret (example usage)
+        run: echo "The secret is ${{ secrets.MY_SECRET }}" 
+      - name: Run tests
+        run: ${{ inputs.greet_name }}
       - name: Print Console
         run: echo ${{github.actor}}
 
