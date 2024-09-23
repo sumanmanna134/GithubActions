@@ -8,7 +8,7 @@ on:
         type: string
         
     secrets:
-      GITHUB_TOKEN:
+      MY_SECRET:
         description: "env secrets of this workflow"
         required: true
 jobs:
