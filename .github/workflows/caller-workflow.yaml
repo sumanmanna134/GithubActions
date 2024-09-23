@@ -4,14 +4,10 @@ on:
 
 jobs:
   call-workflow:
-    runs-on: ubuntu-latest
-    steps:
-      - name: reuse workflow
-        uses: sumanmanna134/GithubActions/.github/workflows/res.yaml@main
-        with:
-          greet_name: 'Suman Manna'
-        env: 
-          MY_SECRET: ${{secrets.MY_SECRET}}
+    uses: sumanmanna134/GithubActions/.github/workflows/res.yaml@main
+    with:
+      greet_name: 'Suman Manna'
+      MY_SECRET: ${{secrets.MY_SECRET}}
     
     # uses: sumanmanna134/GithubActions/.github/workflows/res.yaml@main
     # with:
