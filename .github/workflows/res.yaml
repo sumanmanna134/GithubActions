@@ -9,8 +9,7 @@ on:
         
     secrets:
       MY_SECRET:
-        description: "env secrets of this workflow"
-        required: true
+        required: false
 jobs:
   run-tests:
     runs-on: ubuntu-latest
@@ -27,7 +26,7 @@ jobs:
         run: ${{ inputs.greet_name }}
       - name: Print Console
         run: echo ${{github.actor}}
-        
+
 
 
         
